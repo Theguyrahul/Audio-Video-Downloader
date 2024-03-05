@@ -33,7 +33,7 @@ Before using this project, ensure you have the following prerequisites:
 ### Python Script
 
 **download.py**
-   - Run this script to download audio or Video files from the links in `Alinks.txt`.
+   - Run this script to download audio or Video files.
 
 ### Folders
 
