@@ -15,7 +15,7 @@ Before using this project, ensure you have the following prerequisites:
 1. **Clone the Repository**:
    - Clone this repository to your local machine using:
      ```
-     git clone <repository-link>
+     git clone https://github.com/Theguyrahul/Audio-Video-Downloader.git
      ```
 
 2. **Install Dependencies**:
@@ -30,21 +30,10 @@ Before using this project, ensure you have the following prerequisites:
 
 ## Repository Contents
 
-### Text Files
+### Python Script
 
-1. **Alinks.txt**:
-   - Save audio file links here.
-
-2. **Vlinks.txt**:
-   - Save video file links here.
-
-### Python Scripts
-
-1. **Audio_download.py**:
-   - Run this script to download audio files from the links in `Alinks.txt`.
-
-2. **Video_download.py**:
-   - Run this script to download video files from the links in `Vlinks.txt`.
+**download.py**
+   - Run this script to download audio or Video files from the links in `Alinks.txt`.
 
 ### Folders
 
@@ -55,9 +44,7 @@ Before using this project, ensure you have the following prerequisites:
    - Downloaded video files will be saved here.
 
 ## Usage
-
-1. Add audio and video links to the respective text files (`Alinks.txt` and `Vlinks.txt`).
-2. Run the appropriate Python script (`Audio_download.py` or `Video_download.py`) to download the files.
+Run the download.py and go to port 5000. Copy any link from YouTube and paste it in the webpage. Click the checkbox if you want to download audio file.
 
 ## License
 
