@@ -1,2 +1,5 @@
 # Ignore .conda environment
 .conda/
+Audio_files/
+Video_files/
+

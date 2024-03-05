@@ -1,41 +1,49 @@
+from flask import Flask, render_template, request
 from pytube import YouTube
 import os
 
-# Function to read links from text file separated by spaces or tabs
-def read_links(file_path):
-    try:
-        with open(file_path, 'r') as file:
-            links = file.read().strip().split()
-            return [link.strip() for link in links]
-    except Exception as e:
-        print("Error:", e)
+app = Flask(__name__)
 
-# Function to download YouTube audio
-def download_Video(url, output_path):
+# Function to download YouTube video or audio
+def download_audio(url, output_path):
     try:
-        yt = YouTube(url) 
-        #Select the highest resolution stream
-        stream = yt.streams.get_highest_resolution()
-        # Download the video
+        yt = YouTube(url)
+        stream = yt.streams.filter(only_audio=True).first()
         return stream.download(output_path=output_path)
     except Exception as e:
         print("Error:", e)
 
-# Main function
-if __name__ == "__main__":
-    # Input text file containing YouTube links separated by spaces or tabs
-    input_file = "Vlinks.txt"
-    # Output directory
-    output_dir = "Video_files"
-    # Create output directory if not exists
-    os.makedirs(output_dir, exist_ok=True)
-    
-    # Read links from text file
-    links = read_links(input_file)
-    if links:
-        for link in links:
-            # Download Video
-            Video_file = download_Video(link, output_dir)
-            print("Video file saved at:", Video_file)
+def download_video(url, output_path):
+    try:
+        yt = YouTube(url)
+        stream = yt.streams.get_highest_resolution()
+        return stream.download(output_path=output_path)
+    except Exception as e:
+        return str(e)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/download_media", methods=["POST"])
+def download_media_route():
+    link = request.form.get("link")
+    print(link)
+    audio_only = request.form.get("audio_only")
+    if link:
+        if audio_only == "true":
+            output_dir = "Audio_files"
+            os.makedirs(output_dir, exist_ok=True)
+            media_file = download_audio(link, output_dir)
+            return f"Video file saved at: {media_file}"
+        else:
+            
+            output_dir = "Video_files"
+            os.makedirs(output_dir, exist_ok=True)
+            media_file = download_video(link, output_dir)
+            return f"Video file saved at: {media_file}"
     else:
-        print("No links found in the input file.")
+        return "Please enter a valid YouTube link."
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)
