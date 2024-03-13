@@ -7,8 +7,7 @@ This repository contains Python scripts to download audio and video files from Y
 Before using this project, ensure you have the following prerequisites:
 
 1. **Basic Python Understanding**: Familiarity with Python programming.
-2. **OS Library**: Basic knowledge of working with the operating system (e.g., creating directories, file handling).
-3. **Pytube Library**: Install the Pytube library by running `pip install pytube`. Refer to the [Pytube documentation](https://pytube.io/en/latest/) for details.
+2. **Pytube Library**: Install the Pytube library by running `pip install pytube`. Refer to the [Pytube documentation](https://pytube.io/en/latest/) for details.
 
 ## Getting Started
 
@@ -35,16 +34,8 @@ Before using this project, ensure you have the following prerequisites:
 **download.py**
    - Run this script to download audio or Video files.
 
-### Folders
-
-1. **Audio_files**:
-   - Downloaded audio files will be saved here.
-
-2. **Video_files**:
-   - Downloaded video files will be saved here.
-
 ## Usage
-Run the download.py and go to port 5000. Copy any link from YouTube and paste it in the webpage. Click the checkbox if you want to download audio file.
+Run the download.py and go to port 5000. Copy any link from YouTube and paste it in the webpage. Click the checkbox if you want to download audio file. Every audio or video will be downloaded in your **downloads** folder.
 
 ## License
 
