@@ -35,7 +35,7 @@ Before using this project, ensure you have the following prerequisites:
    - Run this script to download audio or Video files.
 
 ## Usage
-Run the download.py and go to port 5000. Copy any link from YouTube and paste it in the webpage. Click the checkbox if you want to download audio file. Every audio or video will be downloaded in your **downloads** folder.
+Run the download.py and go to port 8000. Copy any link from YouTube and paste it in the webpage. Click the checkbox if you want to download audio file. Every audio or video will be downloaded in your **downloads** folder.
 
 ## License
 
